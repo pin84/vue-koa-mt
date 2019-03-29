@@ -1,0 +1,73 @@
+/*
+ *这是单独为hello mui准备的个性化css，可以覆盖标准mui的css定义；
+ * 在实际项目开发时，建议为App单独写一个css文件，从而实现项目的自定义皮肤功能；
+ * 
+ * */
+/*为什么用mui框架写的头部，放进安卓原生态开发里边，头部不见了，只有头部以下的内容：解决处理，不需要换header，只需要把引用的例子自带的CSS文件 app.css。里的两个样式，注释掉即可*/
+/*
+.mui-plus.mui-android header.mui-bar{
+	display: none;
+}
+.mui-plus.mui-android .mui-bar-nav~.mui-content{
+	padding: 0;
+}*/
+
+
+/*hm开头的表示仅为 Hello MUI示例定义*/
+.hm-description{
+	margin: .5em 0;
+}
+
+.hm-description>li {
+	font-size: 14px;
+	color: #8f8f94;
+}
+/********************公共样式********************************************************************************/
+
+ul,li{ padding:0;margin:0;list-style:none}
+/*标题背景颜色*/
+header.mui-bar{background: #238BFC;color:#fff;height: 40px;}
+header.mui-bar>a.mui-pull-left{color:#fff;}
+/*主体内容*/
+.mui-content{
+	padding: 3% 2%;
+	font-family: initial;
+	background:#fff;
+}
+.mui-scroll{
+	padding:0 3%;
+}
+/*页面上半部分*/
+.Contact_Information{
+	padding-bottom:1%;
+	padding-top:1%;
+	border-bottom: 2px solid #ddd;
+	margin-bottom: 1%;
+}
+/*左浮动*/
+.Left_Content{
+	float:left;width:50%;
+	font-size:20px;
+}
+/*右浮动*/
+.Right_Content{
+	float:right;
+	width:50%;
+}
+/*主要内容*/
+.Subject_Content{
+	margin: 3% 0
+}
+.mui-input-row {
+	margin: 4% 0;
+}
+/*一行数据中内容靠右*/
+.Text_Right{
+	text-align: right;
+	padding-right:15px;
+}
+
+/*****************************************************************************************************/
+/*保存按钮*/
+.Bottom_Btn{margin: 12% 0;text-align:center;}
+.Bottom_Btn>.update_btn,.Bottom_Btn>.add_btn{padding: 10px 4em;border-radius: 54px;font-size: 20px;background: #238BFC;color: #fff;}

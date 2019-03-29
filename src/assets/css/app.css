@@ -1,0 +1,185 @@
+/*
+ *这是单独为hello mui准备的个性化css，可以覆盖标准mui的css定义；
+ * 在实际项目开发时，建议为App单独写一个css文件，从而实现项目的自定义皮肤功能；
+ * 
+ * */
+
+/*
+.mui-plus.mui-android header.mui-bar{
+	display: none;
+}
+*/
+/*
+.mui-plus.mui-android .mui-bar-nav~.mui-content{
+	padding: 0;
+}
+*/
+/*hm开头的表示仅为 Hello MUI示例定义*/
+.hm-description{
+	margin: .5em 0;
+}
+
+.hm-description>li {
+	font-size: 14px;
+	color: #8f8f94;
+}
+.title{
+	background: #1296db;
+	color:#fff;
+}
+.title span{
+	color:#fff !important;
+}
+#save{
+	margin-top: 20px;
+	text-align: center;
+}
+#save button{
+	border-radius: 30px;
+	width: 90%;
+	font-size: 18px;
+	padding: 10px;
+}
+/*圆形*/
+.circular{
+	padding: 0px;
+	width: 50px;
+    text-align: center;
+    line-height:50px;
+    font-size: 18px;
+}
+/*多行文本框  ul*/
+.list-textarea{
+	margin: 0px;
+	padding: 0px;
+	position: relative;
+	background-color: white;
+}
+/*li*/
+.list-textarea .list-item{
+	list-style-type:none;
+	padding: 11px 15px;
+	position: relative;
+}
+/*textarea*/
+.textarea-inlist{
+    width: 65%;
+    padding: 0px;
+    margin: 0px;
+    height:21px;
+    border: 0px;
+    position: absolute;
+    right: 15px;
+    padding-left: 15px;
+}
+/*下划线*/
+.list-textarea .list-item:after{
+	position: absolute;
+	right: 0;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    content: '';
+    transform: scaleY(.5);
+   	background-color: #c8c7cc;
+}
+/*提示内容*/
+.textarea-inlist::-webkit-input-placeholder{ 
+	/* WebKit browsers */ 
+	text-align: right; 
+} 
+/*选择的内容*/
+.tips{
+	position: absolute;
+	right: 35px;
+	display: inline-block;
+	width: 65%;
+	text-align: right;
+	color: #bbb;
+	font-size: 15px;
+}
+/*单行输入框*/
+.mui-input-row:last-child,.mui-input-row{
+	background: white;
+}
+.mui-input-row label,.mui-input-row input{
+	line-height: 21px;
+}
+.mui-input-row:after{
+	left: 0px;
+	position: absolute;
+    right: 0;
+    bottom: 0;	
+    height: 1px;
+    content: '';
+    -webkit-transform: scaleY(.5);
+    transform: scaleY(.5);
+    background-color: #c8c7cc;
+}
+/*.mui-input-row input::-webkit-input-placeholder{ 
+	/* WebKit browsers */ 
+/*	text-align: right; 
+} 
+.mui-input-row input{
+	text-align: right;
+}
+/*多行输入框*/
+.textarea-row:after{
+	left: 0px;
+	position: absolute;
+    right: 0;
+    bottom: 0;	
+    height: 1px;
+    content: '';
+    -webkit-transform: scaleY(.5);
+    transform: scaleY(.5);
+    background-color: #c8c7cc;
+}
+.textarea-row{
+	margin: 0px;
+    padding: 0px;
+    position: relative;
+    background-color: white;
+}
+.textarea-row span{
+	display: inline-block;
+	line-height: 21px;
+  	width: 35%;
+    padding: 11px 15px;
+}
+.textarea-row textarea{
+	width: 65%;
+    padding: 11px 15px 11px 0px;
+   	border: 0px;
+    position: absolute;
+    margin: 0px;
+    text-align: right;
+}
+.textarea-row textarea::-webkit-input-placeholder{ 
+	/* WebKit browsers */
+	text-align: right;  
+} 
+/*文本框输入字数*/
+.row textarea {
+    margin-top: 10px;
+    background-color: #efeff4;
+    border-radius: 10px;
+}
+.row{
+	background-color: #fff;
+    padding: 11px 15px;
+    position: relative;
+}
+.number {
+    position: absolute;
+    right: 25px;
+    bottom: 30px;
+    display: inline;
+}
+/*保存按钮*/
+.mui-btn-block{
+	margin: 0px auto;
+	width: 90%;
+	border-radius: 30px;
+	margin-top: 40px;
+}

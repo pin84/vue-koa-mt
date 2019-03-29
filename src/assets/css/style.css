@@ -1,0 +1,80 @@
+
+.mui-content {
+    font-family: "helvetica neue";
+}
+.Loginbackground{
+	position: absolute;
+	top: 0;
+    left: 0;
+    /*width: 100%;*/
+	min-width: 100%;
+    min-height: 100%;
+   /* max-height: 100%; */
+    border: 0;
+	background-image: url('../images/bg1.png');
+	/*background-size: cover;*/
+	background-size: 100%  100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.logo_Top{
+	margin-top: 5%;
+	text-align:center;
+}
+.logo_Top>.Font{
+	color: #177fc7;
+	font-weight: bold;
+	/*margin-top: 0.4em;*/margin-top: 2%;
+	font-size: 1.5em !important;
+	padding-bottom: 22px;
+	font-family: 微软雅黑;
+}
+
+.Backstage_Data,.Other{
+	width:90%;
+	margin:auto;
+}
+.Backstage_Data>.div_01{
+	margin: 19px 0;
+    line-height: 30px;
+    text-align: center;
+}
+.Backstage_Data>.div_01>div.jz_password,.Backstage_Data>.div_01>div.sz_server{
+	float:left;
+	width:50%;
+	text-align: left;
+    /*padding-left: 14px;*/
+	padding-left: 5%;
+}
+.Backstage_Data>.div_01 span{
+	font-family: 微软雅黑;
+}
+.input_sl{
+	border-bottom: 1px solid cadetblue;
+	/*margin: 0 10px 7px 10px;*/
+	margin: 0 3% 6% 5%;
+	
+}
+
+#username,#password{
+	width:85%;
+	background: none;
+	margin-bottom: 0;
+	border: 0;
+	padding: 10px 5px;
+	font-size:18px;
+}
+.Backstage_Data>div.Btn_div{
+	/*margin: 34px 9px;*/
+	margin: 13% 5%;
+}
+#Btn{
+	border-radius: 17px;
+}
+
+.Other>div{
+	padding: 6px 6px;
+    border-bottom: 1px solid cadetblue;
+    margin: 11px 9px;
+    font-family: 微软雅黑;
+}
