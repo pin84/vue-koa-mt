@@ -1,16 +1,16 @@
 <template>
   <el-row
-    :gutter="15"
+    :gutter="0"
     class="m-header"
   >
-    <el-col :span="6">
+    <el-col :span="4">
       <Geo />
     </el-col>
     <el-col :span="6">
-      <div class="grid-content bg-purple"></div>
+      <User />
     </el-col>
-    <el-col :span="6">
-      <div class="grid-content bg-purple"></div>
+    <el-col :span="14">
+      <Nav />
     </el-col>
   </el-row>
 </template>
@@ -18,10 +18,14 @@
 
 <script>
 import Geo from './geo'
+import User from './user'
+import Nav from './nav'
 export default {
-components:{
-  Geo
-}
+  components: {
+    Geo,
+    User,
+    Nav
+  }
 }
 </script>
 
