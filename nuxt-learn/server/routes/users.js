@@ -3,6 +3,8 @@ const router = require('koa-router')()
 router.prefix('/users')
 
 router.get('/list', function (ctx, next) {
+
+
   ctx.body = {
     abc: ['北京', '湖南']
   }

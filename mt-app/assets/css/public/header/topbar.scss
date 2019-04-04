@@ -59,7 +59,6 @@
 
         a {
           color: #999;
-
           &:hover {
             color: #31BBAC;
           }
@@ -68,11 +67,9 @@
         &.list:hover {
           border: 1px solid #E5E5E5;
           border-top: none;
-
           >dl {
             display: block;
           }
-
           .subContainer {
             display: flex;
           }
@@ -82,13 +79,11 @@
           background: #fff;
           display: none;
           z-index: 999;
-
           dd {
             line-height: 35px;
-
-            &:hover {
-              color: #31BBAC;
-            }
+            // &:hover {
+            //   color: #31BBAC;
+            // }
           }
         }
 

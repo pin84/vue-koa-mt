@@ -5,7 +5,7 @@ router.get('/', async (ctx, next) => {
   //   title: 'Hello Koa 2!'
   // })
 
-  ctx.body =  ['beijing','tianjin']
+  ctx.body =  'hello index '
 })
 
 router.get('/string', async (ctx, next) => {
