@@ -2,14 +2,16 @@
   <div class="slide">
     <el-carousel height="240px">
       <el-carousel-item
-        v-for="item in list"
-        :key="item.img">
-        <img :src="item.img">
+        v-for="(item,idx) in list"
+        :key="idx"
+      >
+        <img :src="item.img" alt="">
       </el-carousel-item>
     </el-carousel>
   </div>
-
 </template>
+
+
 <script>
 export default {
   data: () => {
@@ -34,4 +36,3 @@ export default {
   }
 }
 </script>
-

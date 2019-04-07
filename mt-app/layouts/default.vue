@@ -1,27 +1,31 @@
 <template>
-  <el-container class="layout-default">
-    <el-header>
-      <my-header />
+   <el-container class="layout-default">
+    <el-header height="197px">
+      <my-header/>
     </el-header>
     <el-main>
-      <nuxt />
+      <nuxt/>
     </el-main>
-    <el-footer>Footer</el-footer>
+    <el-footer height="100%">
+     <Footer />
+    </el-footer>
   </el-container>
 </template>
 
 <script>
 import MyHeader from '@/components/public/header'
+import Footer from '@/components/public/footer'
 export default {
   components: {
-    MyHeader
+    MyHeader,
+    Footer
   }
 }
 </script>
 
 
 <style>
-html {
+/* html {
   font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
     Roboto, 'Helvetica Neue', Arial, sans-serif;
   font-size: 16px;
@@ -67,5 +71,5 @@ html {
 .button--grey:hover {
   color: #fff;
   background-color: #35495e;
-}
+} */
 </style>

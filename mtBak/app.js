@@ -15,6 +15,13 @@ const Redis = require('koa-redis')
 const index = require('./routes/index')
 const users = require('./routes/users')
 
+
+//mongodb
+const mongoose = require('mongoose')
+const dbConfig = require('./dbs/config')
+
+
+
 // error handler
 onerror(app)
 
@@ -22,8 +29,8 @@ onerror(app)
 //session cookie
 app.keys = ['live84', 'qp1984']
 app.use(session({
-  key:'test',
-  prefix:'testpr',
+  key: 'test',
+  prefix: 'testpr',
   store: new Redis()  //session 存储在redis数据库中
 }))
 
@@ -53,6 +60,13 @@ app.use(async (ctx, next) => {
 // routes
 app.use(index.routes(), index.allowedMethods())
 app.use(users.routes(), users.allowedMethods())
+
+
+//mongoose
+mongoose.connect(dbConfig.dbs, {
+  useNewUrlParser: true
+})
+
 
 // error-handling
 app.on('error', (err, ctx) => {

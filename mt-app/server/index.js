@@ -1,9 +1,36 @@
-// const Koa = require('koa')
 import Koa from 'koa'
 const consola = require('consola')
 const { Nuxt, Builder } = require('nuxt')
 
+//引入自己要用的包
+import mongoose from 'mongoose'
+import bodyParser from 'koa-bodyparser'
+import session from 'koa-generic-session'
+import Redis from 'koa-redis'
+import json from 'koa-json' //美化服务端发往客户端的json 数据
+import dbConfig from './dbs/config'
+import passport from './interface/utils/passport'
+import users from './interface/users'
+
+
 const app = new Koa()
+
+//自己的配置
+app.keys = ['live84', 'mt']
+app.proxy = true
+app.use(session({
+  key: 'mt',
+  prefix: 'mt:uid',
+  store: new Redis()
+}))
+app.use(bodyParser({
+  extendTypes: ['json', 'form', 'text']
+}))
+app.use(json())
+mongoose.connect(dbConfig.dbs, { useNewUrlParser: true })
+app.use(passport.initialize())
+app.use(passport.session())
+//自己的配置END
 
 // Import and Set Nuxt.js options
 let config = require('../nuxt.config.js')
@@ -26,6 +53,9 @@ async function start() {
     await nuxt.ready()
   }
 
+  //引入自己的路由
+  app.use(users.routes()).use(users.allowedMethods())
+  //END
   app.use(ctx => {
     ctx.status = 200
     ctx.respond = false // Bypass Koa's built-in response handling
