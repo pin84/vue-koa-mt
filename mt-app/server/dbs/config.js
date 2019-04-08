@@ -23,8 +23,8 @@ export default {
 
     },
 
-     expire() {
-      return new Date().getTime() + 1000 * 60
+    expire() {
+      return new Date().getTime() + 1000 * 60 * 15
     }
   }
 }

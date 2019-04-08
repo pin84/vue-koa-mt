@@ -172,10 +172,10 @@ export default {
 
     },
     register() {
-      this.$refs.ruleForm.validateField((valid) => {
+      this.$refs.ruleForm.validate((valid) => {
         if (valid) {
           axios.post('/users/signup', {
-            username: windwo.encodeURIComponent(this.ruleForm.name),
+            username: window.encodeURIComponent(this.ruleForm.name),
             password: crytoJS.MD5(this.ruleForm.pwd).toString(),
             email: this.ruleForm.email,
             code: this.ruleForm.code
