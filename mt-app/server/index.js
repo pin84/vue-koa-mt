@@ -11,6 +11,7 @@ import json from 'koa-json' //美化服务端发往客户端的json 数据
 import dbConfig from './dbs/config'
 import passport from './interface/utils/passport'
 import users from './interface/users'
+import geo from './interface/geo'
 
 
 const app = new Koa()
@@ -55,6 +56,7 @@ async function start() {
 
   //引入自己的路由
   app.use(users.routes()).use(users.allowedMethods())
+  app.use(geo.routes()).use(geo.allowedMethods())
   //END
   app.use(ctx => {
     ctx.status = 200

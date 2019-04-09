@@ -28,7 +28,6 @@ export default {
   },
   async mounted() {
     const { status, data: { user } } = await axios.get('/users/getUser')
-    console.log(user)
     if (status === 200) {
       this.user = user
     }
@@ -36,7 +35,3 @@ export default {
   }
 }
 </script>
-
-
-<style lang='stylus' scoped>
-</style>
