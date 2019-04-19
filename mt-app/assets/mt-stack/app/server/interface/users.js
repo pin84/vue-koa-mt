@@ -36,6 +36,7 @@ router.post('/signup', async (ctx) => {
       msg: '请填写验证码'
     }
   }
+
   let user = await User.find({username})
   if (user.length) {
     ctx.body = {

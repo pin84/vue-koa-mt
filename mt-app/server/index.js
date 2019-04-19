@@ -5,13 +5,14 @@ const { Nuxt, Builder } = require('nuxt')
 //引入自己要用的包
 import mongoose from 'mongoose'
 import bodyParser from 'koa-bodyparser'
-import session from 'koa-generic-session'
+import session from 'koa-generic-session' //koa-redis依赖
 import Redis from 'koa-redis'
 import json from 'koa-json' //美化服务端发往客户端的json 数据
 import dbConfig from './dbs/config'
 import passport from './interface/utils/passport'
 import users from './interface/users'
 import geo from './interface/geo'
+import search from './interface/search'
 
 
 const app = new Koa()
@@ -57,6 +58,9 @@ async function start() {
   //引入自己的路由
   app.use(users.routes()).use(users.allowedMethods())
   app.use(geo.routes()).use(geo.allowedMethods())
+  app.use(search.routes()).use(search.allowedMethods())
+
+
   //END
   app.use(ctx => {
     ctx.status = 200

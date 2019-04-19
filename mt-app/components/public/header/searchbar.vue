@@ -31,7 +31,7 @@
           >
             <dt>热门搜索</dt>
             <dd
-              v-for="(item,idx) in hotList"
+              v-for="(item,idx) in $store.state.home.hotPlace"
               :key="idx"
             >{{item}}</dd>
           </dl>
@@ -46,11 +46,12 @@
           </dl>
         </div>
         <p class="suggset">
-          <a href="#">故宫博物院</a>
-          <a href="#">故宫博物院</a>
-          <a href="#">故宫博物院</a>
-          <a href="#">故宫博物院</a>
-          <a href="#">故宫博物院</a>
+          <a
+            href="#"
+            v-for="(item,idx) in $store.state.home.hotPlace"
+            :key="idx"
+          >{{item}}</a>
+
         </p>
         <ul class="nav">
           <li>
@@ -112,10 +113,11 @@ export default {
     return {
       isSearch: '',
       iSFocus: false,
-      hotList: ['火锅','火锅','火锅'],
-      searchList: ['故宫','故宫','故宫']
+      hotList: [],
+      searchList: []
     }
   },
+
   computed: {
     isHotPlace: function () {
       return !this.isSearch && this.iSFocus
@@ -127,14 +129,27 @@ export default {
   methods: {
     focus() {
       this.iSFocus = true
+      // let city = '三亚' //现在数据库里只有三亚
+      // fetch(`/search/hotPlace?city=${city}`).then(res => {
+      //   return res.json()
+      // }).then(data => {
+      //   this.hotList = data.res
+      // })
     },
     blur() {
       setTimeout(() => {
         this.iSFocus = false
       }, 200)
     },
-    input(){
-      console.log('input')
+    input() {
+      // let city = this.$store.state.geo.position.city.replace('市','')
+      let city = '三亚' //现在数据库里只有三亚
+      fetch(`/search/top?city=${city}&input=${this.isSearch}`).then(res => {
+        return res.json()
+      }).then(data => {
+        this.searchList = data.top
+      })
+
     }
   }
 }

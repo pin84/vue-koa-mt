@@ -25,20 +25,19 @@ router.post('/signup', async (ctx) => {
     const saveExpire = await Store.hget(`nodemail:${username}`, 'expire')
     if (code === saveCode) {
       if (new Date().getTime() - saveExpire > 0) {
-        ctx.body = {
+        return ctx.body = {
           code: -1,
           msg: '验证码已过期，请重新尝试'
         }
-        return false
       }
     } else {
-      ctx.body = {
+      return ctx.body = {
         code: -1,
         msg: '请填写正确的验证码'
       }
     }
   } else {
-    ctx.body = {
+    return ctx.body = {
       code: -1,
       msg: '请填写验证码'
     }
@@ -49,17 +48,19 @@ router.post('/signup', async (ctx) => {
     username
   })
   if (user.length) {
-    ctx.body = {
+   return ctx.body = {
       code: -1,
       msg: '用户名已被注册'
     }
   }
+
 
   let nuser = await User.create({
     username,
     password,
     email
   })
+
   if (nuser) {
     let res = await axios.post('/users/signin', { username, password })
     if (res.data && res.data.code === 0) {
@@ -110,7 +111,7 @@ router.post('/signin', async (ctx, next) => {
 router.post('/verify', async (ctx, next) => {
   let username = ctx.request.body.username
   const saveExpire = await Store.hget(`nodemail:${username}`, 'expire')
-  console.log(saveExpire, new Date().getTime() - saveExpire)
+  // console.log(saveExpire, new Date().getTime() - saveExpire)
   if (saveExpire && new Date().getTime() - saveExpire < 0) {
     ctx.body = {
       code: -1,
@@ -167,6 +168,7 @@ router.get('/exit', async (ctx, next) => {
     }
   }
 })
+
 //获取用户名
 router.get('/getUser', async (ctx) => {
   if (ctx.isAuthenticated()) {
