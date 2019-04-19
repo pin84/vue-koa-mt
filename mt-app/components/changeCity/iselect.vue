@@ -127,5 +127,6 @@ export default {
 
 
 <style lang='scss'>
-@import "@/assets/css/changeCity/iselect.scss";
+@import "@/assets/css/changecity/iselect.scss";
+
 </style>

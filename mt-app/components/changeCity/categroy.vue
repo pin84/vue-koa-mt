@@ -80,5 +80,5 @@ export default {
 
 
 <style lang='scss' scoped>
-@import "@/assets/css/changeCity/categroy.scss";
+@import "@/assets/css/changecity/categroy.scss";
 </style>

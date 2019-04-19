@@ -24,5 +24,5 @@ export default {
 
 
 <style lang='scss' scoped>
-@import '@/assets/css/changeCity/hot.scss'
+@import '@/assets/css/changecity/hot.scss';
 </style>
