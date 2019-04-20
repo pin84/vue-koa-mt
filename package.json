@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=development nodemon server/index.js --watch server --exec babel-node",
     "build": "nuxt build",
-    "start": "cross-env NODE_ENV=production node server/index.js --exec babel-node",
+    "start": "cross-env NODE_ENV=production nodemon server/index.js --exec babel-node",
     "generate": "nuxt generate"
   },
   "dependencies": {
@@ -27,7 +27,7 @@
     "lodash": "^4.17.11",
     "mongoose": "^5.4.22",
     "nodemailer": "^6.1.0",
-    "nuxt": "^2.4.0",
+    "nuxt": "^2.6.2",
     "passport-local": "^1.0.0"
   },
   "devDependencies": {

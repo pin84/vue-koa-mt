@@ -2,29 +2,29 @@ const Koa =  require('koa')
 const consola = require('consola')
 const { Nuxt, Builder } = require('nuxt')
 
-//引入自己要用的包
-const mongoose =require('mongoose')
-const bodyParser =require('koa-bodyparser')
-const session =require('koa-generic-session')  //koa-redis依赖
-const Redis =require('koa-redis')
-const json =require('koa-json')  //美化服务端发往客户端的json 数据
-const dbConfig =require('./dbs/config')
-const passport =require('./interface/utils/passport')
-const users =require('./interface/users')
-const geo =require('./interface/geo')
-const search =require('./interface/search')
+// //引入自己要用的包
+// const mongoose =require('mongoose')
+// const bodyParser =require('koa-bodyparser')
+// const session =require('koa-generic-session')  //koa-redis依赖
+// const Redis =require('koa-redis')
+// const json =require('koa-json')  //美化服务端发往客户端的json 数据
+// const dbConfig =require('./dbs/config')
+// const passport =require('./interface/utils/passport')
+// const users =require('./interface/users')
+// const geo =require('./interface/geo')
+// const search =require('./interface/search')
 
 //引入自己要用的包
-// import mongoose from 'mongoose'
-// import bodyParser from 'koa-bodyparser'
-// import session from 'koa-generic-session' //koa-redis依赖
-// import Redis from 'koa-redis'
-// import json from 'koa-json' //美化服务端发往客户端的json 数据
-// import dbConfig from './dbs/config'
-// import passport from './interface/utils/passport'
-// import users from './interface/users'
-// import geo from './interface/geo'
-// import search from './interface/search'
+import mongoose from 'mongoose'
+import bodyParser from 'koa-bodyparser'
+import session from 'koa-generic-session' //koa-redis依赖
+import Redis from 'koa-redis'
+import json from 'koa-json' //美化服务端发往客户端的json 数据
+import dbConfig from './dbs/config'
+import passport from './interface/utils/passport'
+import users from './interface/users'
+import geo from './interface/geo'
+import search from './interface/search'
 
 
 const app = new Koa()
