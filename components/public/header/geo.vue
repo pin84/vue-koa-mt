@@ -1,6 +1,6 @@
 <template>
   <div class="m-geo">
-    <i class="el-icon-location">{{$store.state.geo.position.city}}</i>
+    <i class="el-icon-location">{{$store.state.geo.position.city? $store.state.geo.position.city :$store.state.geo.position.province}}</i>
     <nuxt-link
       class="changeCity"
       to='/changeCity'
