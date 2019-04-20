@@ -11,18 +11,16 @@ const sign = '8BznYmG0qMCZgWOlXNQBwMoTviWd3utr'
 
 router.get('/getPosition', async (ctx) => {
   // {status,data:{content:{address_detail:{city}}}} 百度地图接口返回的解构 拿到city的值
-  let { status, data: { content: { address_detail: { city, province } } } } = await axios.get(`http://api.map.baidu.com/location/ip?ak=${sign}`)
+  // let { status, data: { content: { address_detail: { city, province } } } } = await axios.get(`http://api.map.baidu.com/location/ip?ak=${sign}`)
 
-  let a = await axios.get(`http://api.map.baidu.com/location/ip?ak=${sign}`)
+  let { status, data } = await axios.get(`http://api.map.baidu.com/location/ip?ak=${sign}`)
 
-  console.log('geo/getposition======',a)
-
-
-  console.log('geo/getposition',city)
+  console.log('geo/getposition======', data)
   ctx.body = {
     status,
-    province,
-    city
+    data,
+    // province,
+    // city
   }
 })
 
@@ -46,8 +44,8 @@ router.get('/cityById', async (ctx) => {
   let result = await City.find({
     id
   })
-  let {value} = result[0]
-  let city = value.map(item =>{
+  let { value } = result[0]
+  let city = value.map(item => {
     return item.name
   })
   ctx.body = {
