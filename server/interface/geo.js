@@ -13,6 +13,10 @@ router.get('/getPosition', async (ctx) => {
   // {status,data:{content:{address_detail:{city}}}} 百度地图接口返回的解构 拿到city的值
   let { status, data: { content: { address_detail: { city, province } } } } = await axios.get(`http://api.map.baidu.com/location/ip?ak=${sign}`)
 
+  let a = await axios.get(`http://api.map.baidu.com/location/ip?ak=${sign}`)
+
+  console.log('geo/getposition======',a)
+
 
   console.log('geo/getposition',city)
   ctx.body = {
