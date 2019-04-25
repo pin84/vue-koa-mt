@@ -5,6 +5,7 @@
         v-for="item in nav"
         :key="item.name"
         :class="[item.name,item.active?'s-nav-active':'']"
+        @click="sort"
       >{{item.txt}}</dd>
     </dl>
     <ul>
@@ -20,9 +21,9 @@
 <script>
 import Item from './product.vue'
 export default {
-  props:{
-    list:{
-      type:Array
+  props: {
+    list: {
+      type: Array
     }
   },
   data() {
@@ -51,9 +52,16 @@ export default {
       ]
     };
   },
-  components:{
+  components: {
     Item
+  },
+  methods: {
+    sort() {
+      console.log('sort');
+
+    }
   }
+
 };
 </script>
 

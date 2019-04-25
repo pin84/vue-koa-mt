@@ -88,12 +88,9 @@ export default {
     this.types = types.filter(item => item.type !== '').slice(0, 5)
     result.forEach((item, index) => {
       this.point.push({
-        icon: `//a.amap.com/jsapi_demos/static/demo-center/icons/poi-marker-${index+1}.png`,
         position: [item.longtide, item.latitude]
       })
     })
-
-
   }
 
 }

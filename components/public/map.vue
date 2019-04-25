@@ -1,9 +1,14 @@
 <template>
+<div>
+
   <div
     :id="id"
     :style="{width:width+'px',height:height+'px',margin:'34px auto'}"
     class="m-map"
-  />
+  />  
+  <span v-if="false">{{point}}</span>
+</div>
+  
 </template>
 
 <script>
@@ -27,10 +32,19 @@ export default {
   data() {
     return {
       id: `map`,
-      key: "d43d588a9f9ba65038aba93320418500"
+      key: "d43d588a9f9ba65038aba93320418500",
+      b: []
     };
   },
+
+  // watch: {
+  //   point: function (a) {
+  //     return a
+      
+  //   }
+  // },
   mounted() {
+
     this.id = `map${Math.random().toString().slice(4, 6)}`
     let id = this.id
     window.onLoad = () => {
@@ -44,7 +58,7 @@ export default {
       this.point.forEach(function (marker) {
         new AMap.Marker({
           map: map,
-          icon: marker.icon,
+          icon: '//a.amap.com/jsapi_demos/static/demo-center/icons/poi-marker-1.png',
           position: [marker.position[0], marker.position[1]],
           offset: new AMap.Pixel(-13, -30)
         });
