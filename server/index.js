@@ -68,6 +68,22 @@ async function start() {
     await nuxt.ready()
   }
 
+  let corsUrl = ['http://mt.html8.info']
+  app.use(async (ctx, next) => {
+    let origin = ctx.header.origin
+    let index = corsUrl.indexOf(origin)
+  
+    //前台请求时 credentials: 'include', 所以这一项的值不能这通配符 *
+    ctx.set('Access-Control-Allow-Origin', `${corsUrl[index]}`)
+    ctx.set("Access-Control-Allow-Headers", "X-Requested-With")
+    ctx.set("Access-Control-Allow-Methods","PUT,POST,GET,DELETE,OPTIONS")
+    ctx.set("Access-Control-Allow-Credentials", "true") //允许前台 fetch 请求的跨域 cookie
+    ctx.set("Access-Control-Allow-Headers", "Content-Type,XFILENAME,XFILECATEGORY,XFILESIZE")
+    ctx.set("Content-Type", "application/json;charset=utf-8")
+    await next()
+  })
+
+
   //引入自己的路由
   app.use(users.routes()).use(users.allowedMethods())
   app.use(geo.routes()).use(geo.allowedMethods())
