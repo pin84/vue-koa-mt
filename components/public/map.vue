@@ -37,12 +37,12 @@ export default {
     };
   },
 
-  // watch: {
-  //   point: function (a) {
-  //     return a
+  watch: {
+    point: function (a) {
+      return a
       
-  //   }
-  // },
+    }
+  },
   mounted() {
 
     this.id = `map${Math.random().toString().slice(4, 6)}`

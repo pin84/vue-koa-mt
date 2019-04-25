@@ -5,7 +5,7 @@
         v-for="item in nav"
         :key="item.name"
         :class="[item.name,item.active?'s-nav-active':'']"
-        @click="sort"
+        @click="sortList"
       >{{item.txt}}</dd>
     </dl>
     <ul>
@@ -56,8 +56,20 @@ export default {
     Item
   },
   methods: {
-    sort() {
-      console.log('sort');
+    sortList(e) {
+      let txt = e.target.innerText
+      switch (txt) {
+        case '价格最低':
+          this.list.sort((a, b) => a.price - b.price)
+          break;
+        case '人气最高':
+          this.list.sort((a, b) => b.comment - a.comment)
+          break;
+        case '评价最高':
+          this.list.sort((a, b) => b.rate - a.rate)
+          break;
+      }
+
 
     }
   }
