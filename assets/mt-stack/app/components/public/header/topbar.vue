@@ -14,6 +14,7 @@
   </el-row>
 </template>
 
+
 <script>
 import Geo from './geo.vue'
 import User from './user.vue'

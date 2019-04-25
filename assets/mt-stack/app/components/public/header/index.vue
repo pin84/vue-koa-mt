@@ -13,6 +13,7 @@
   </div>
 </template>
 
+
 <script>
 import topBar from './topbar.vue'
 import searchBar from './searchbar.vue'

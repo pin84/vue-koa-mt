@@ -2,7 +2,8 @@
   <div
     :id="id"
     :style="{width:width+'px',height:height+'px',margin:'34px auto'}"
-    class="m-map"/>
+    class="m-map"
+  />
 </template>
 
 
@@ -10,24 +11,24 @@
 export default {
   props: {
     width: {
-      type:Number,
-      default:300
+      type: Number,
+      default: 300
     },
     height: {
-      type:Number,
-      default:300
+      type: Number,
+      default: 300
     },
     point: {
-      type:Array,
-      default(){
-        return [116.46,39.92]
+      type: Array,
+      default() {
+        return [116.46, 39.92]
       }
     }
   },
   data() {
     return {
       id: `map`,
-      key: '0dbc0dfd7c775f2a927174493eab8220'
+      key: "d43d588a9f9ba65038aba93320418500"
     }
   },
   watch: {

@@ -2,11 +2,12 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import { interopDefault } from './utils'
 
-const _4320ad94 = () => interopDefault(import('..\\pages\\changeCity.vue' /* webpackChunkName: "pages_changeCity" */))
-const _ff7cd44e = () => interopDefault(import('..\\pages\\exit.vue' /* webpackChunkName: "pages_exit" */))
-const _75b900be = () => interopDefault(import('..\\pages\\login.vue' /* webpackChunkName: "pages_login" */))
-const _424e775e = () => interopDefault(import('..\\pages\\register.vue' /* webpackChunkName: "pages_register" */))
-const _a7dd44b2 = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages_index" */))
+const _5f5ca87c = () => interopDefault(import('..\\pages\\changeCity.vue' /* webpackChunkName: "pages_changeCity" */))
+const _0b691d36 = () => interopDefault(import('..\\pages\\exit.vue' /* webpackChunkName: "pages_exit" */))
+const _3cea96b2 = () => interopDefault(import('..\\pages\\login.vue' /* webpackChunkName: "pages_login" */))
+const _48f6072b = () => interopDefault(import('..\\pages\\products.vue' /* webpackChunkName: "pages_products" */))
+const _b4b0a62c = () => interopDefault(import('..\\pages\\register.vue' /* webpackChunkName: "pages_register" */))
+const _7342f39b = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages_index" */))
 
 Vue.use(Router)
 
@@ -84,23 +85,27 @@ export function createRouter() {
 
     routes: [{
       path: "/changeCity",
-      component: _4320ad94,
+      component: _5f5ca87c,
       name: "changeCity"
     }, {
       path: "/exit",
-      component: _ff7cd44e,
+      component: _0b691d36,
       name: "exit"
     }, {
       path: "/login",
-      component: _75b900be,
+      component: _3cea96b2,
       name: "login"
     }, {
+      path: "/products",
+      component: _48f6072b,
+      name: "products"
+    }, {
       path: "/register",
-      component: _424e775e,
+      component: _b4b0a62c,
       name: "register"
     }, {
       path: "/",
-      component: _a7dd44b2,
+      component: _7342f39b,
       name: "index"
     }],
 

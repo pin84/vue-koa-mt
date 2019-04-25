@@ -33,7 +33,9 @@
             <dd
               v-for="(item,idx) in $store.state.home.hotPlace"
               :key="idx"
-            >{{item}}</dd>
+            >
+              <a :href="'/products?keyword='+item">{{item}}</a>
+            </dd>
           </dl>
           <dl
             class="searchList"
@@ -42,16 +44,17 @@
             <dd
               v-for="(item,idx) in searchList"
               :key="idx"
-            >{{item}}</dd>
+            >
+             <a :href="'/products?keyword='+item">{{item}}</a>
+            </dd>
           </dl>
         </div>
-        <p class="suggset">
+        <p class="suggest">
           <a
-            href="#"
             v-for="(item,idx) in $store.state.home.hotPlace"
+            :href="'/products?keyword='+item"
             :key="idx"
           >{{item}}</a>
-
         </p>
         <ul class="nav">
           <li>
@@ -143,7 +146,7 @@ export default {
     },
     input() {
       // let city = this.$store.state.geo.position.city.replace('市','')
-      let city = '三亚' //现在数据库里只有三亚
+      let city = '丽江' //现在数据库里只有丽江
       fetch(`/search/top?city=${city}&input=${this.isSearch}`).then(res => {
         return res.json()
       }).then(data => {
@@ -156,5 +159,4 @@ export default {
 </script>
 
 
-<style lang='stylus' scoped>
-</style>
+<style lang='stylus' scoped></style>

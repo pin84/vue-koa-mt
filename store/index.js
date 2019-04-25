@@ -15,7 +15,6 @@ const store = () => new Vuex.Store({
     async nuxtServerInit({
       commit
     }, { req, app }) {
-      console.log('store/index.js-18')
       const {status,data:{province,city}} = await axios.get('http://localhost:3000/geo/getPosition')
       commit('geo/setPosition',{province,city})
 
@@ -23,8 +22,8 @@ const store = () => new Vuex.Store({
       commit('home/setMenu',menu)
       const {status:status3,data:{res}} = await axios.get('http://localhost:3000/search/hotPlace',{
         params:{
-          // city:app.store.state.geo.position.city, //现在数据库只有三亚，所以先写死
-          city:'三亚'
+          // city:app.store.state.geo.position.city, //现在数据库只有丽江，所以先写死
+          city:'丽江'
         }
       })
       commit('home/setHotPlace', res)
