@@ -43,7 +43,7 @@ export default {
 
   async mounted() {
     let keyword = decodeURIComponent(window.location.search).split('=')[1]
-    let city = this.$store.state.geo.position.city;
+    // let city = this.$store.state.geo.position.city;
 
     let {
       status,
@@ -60,6 +60,7 @@ export default {
         city: "丽江" //现在数据库catagroy里城市字段只有丽江
       }
     );
+
 
 
     this.list = result.filter(item => true).map(item => {
