@@ -81,7 +81,6 @@ export default {
           latitude: item.latitude
         },
       }
-
     })
 
     this.keyword = keyword

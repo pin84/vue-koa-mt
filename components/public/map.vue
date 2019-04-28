@@ -34,7 +34,6 @@ export default {
       .slice(4, 6)}`;
     let id = this.id;
     window.onLoad = () => {
-      console.log(this.point[0].position);
       var map = new AMap.Map(id, {
         center: this.point[0].position,
         zoom: 11

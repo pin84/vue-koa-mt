@@ -1,6 +1,7 @@
 import Router from 'koa-router'
 import axios from 'axios'
 import Poi from '../dbs/models/poi'
+import Product from '../dbs/models/product'
 import { set } from 'mongoose';
 
 let router = new Router({ prefix: '/search' })
@@ -61,6 +62,23 @@ router.get('/resultsByKeywords', async (ctx) => {
   ctx.body = {
     code: 0,
     result
+  }
+})
+
+router.get('/product', async (ctx) => {
+  let city = ctx.query.city
+  let keyword = ctx.query.keyword
+  let type = ctx.query.type
+
+  let product = await Product.findOne({
+    city,
+    name:keyword,
+    type
+  })
+
+  ctx.body = {
+    code: 0,
+    product
   }
 })
 

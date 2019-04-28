@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import { interopDefault } from './utils'
 
 const _5f5ca87c = () => interopDefault(import('..\\pages\\changeCity.vue' /* webpackChunkName: "pages_changeCity" */))
+const _e522e150 = () => interopDefault(import('..\\pages\\detail.vue' /* webpackChunkName: "pages_detail" */))
 const _0b691d36 = () => interopDefault(import('..\\pages\\exit.vue' /* webpackChunkName: "pages_exit" */))
 const _3cea96b2 = () => interopDefault(import('..\\pages\\login.vue' /* webpackChunkName: "pages_login" */))
 const _48f6072b = () => interopDefault(import('..\\pages\\products.vue' /* webpackChunkName: "pages_products" */))
@@ -87,6 +88,10 @@ export function createRouter() {
       path: "/changeCity",
       component: _5f5ca87c,
       name: "changeCity"
+    }, {
+      path: "/detail",
+      component: _e522e150,
+      name: "detail"
     }, {
       path: "/exit",
       component: _0b691d36,
