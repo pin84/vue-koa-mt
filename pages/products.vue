@@ -9,11 +9,11 @@
       <List :list='list' />
     </el-col>
     <el-col :span="5">
-      <Amap
+      <!-- <Amap
         :width='230'
         :height='290'
         :point='point'
-      />
+      /> -->
     </el-col>
   </el-row>
 </template>
